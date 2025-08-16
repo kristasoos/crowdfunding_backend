@@ -18,6 +18,23 @@ class Fundraiser(models.Model):
     # Automatically add the current time and date to DB.
     date_created=models.DateTimeField(auto_now_add=True)
 
+class Pledge(models.Model):
+    # Info to this class comes from the database table drawing. If we add more firlds to the table, we also need t add them here. 
+    amount=models.IntegerField()
+    comment=models.CharField(max_length=200)
+    anonomous=models.BooleanField()
+    fundraiser=models.ForeignKey(
+        # in our case it needs to match the class name above
+        "Fundraiser",
+        # Tells djando to add extra information to Fundraiser. name of the property to create.
+        related_name="pledges",
+        # on delete means that if the fundraiser is deleted, all pledges related to it will also be deleted.
+        on_delete=models.CASCADE
+    )
+
+   
+
+
 
 
     

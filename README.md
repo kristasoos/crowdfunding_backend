@@ -40,10 +40,14 @@ It might look messy here in the PDF, but once it's rendered it looks very neat!
 
 It can be helpful to keep the markdown preview open in VS Code so that you can see what you're typing more easily. }}
 
-| URL          | HTTP Method | Purpose               | Request Body | Success Response Code | Authentication/Authorisation |
-| ------------ | ----------- | --------------------- | ------------ | --------------------- | ---------------------------- |
-| /fundraisers | GET         | Fetch All Fundraisers | N/A          | 200                   | None                         |
-| /fundraisers | POST        | Create new Fundraiser | JSON Payload | 201                   | Logged in User               |
+| URL           | HTTP Method | Purpose               | Request Body | Success Response Code | Authentication/Authorisation |
+| ------------- | ----------- | --------------------- | ------------ | --------------------- | ---------------------------- |
+| /fundraisers  | GET         | Fetch All Fundraisers | N/A          | 200                   | None                         |
+| /fundraisers  | POST        | Create new Fundraiser | JSON Payload | 201                   | Logged in User               |
+| /fundraisers/ |
+| 1/pledges     | GET         | Fetch all the Pledges | N/A          | 200                   | None                         |
+| /fundraisers/ |
+| 1/pledges     | POST        | New PLedge for Fundr. | JSON Payload | 201                   | Logged in user               |
 
 ### DB Schema
 
