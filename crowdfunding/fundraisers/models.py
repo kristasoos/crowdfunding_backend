@@ -11,9 +11,11 @@ class Fundraiser(models.Model):
     title=models.CharField(max_length=200)
     description=models.TextField()
     goal=models.IntegerField()
+    # URL field is for validation. 
     image=models.URLField()
     is_open=models.BooleanField()
     # Date field should be automatically set with the current date when record is created. 
+    # Automatically add the current time and date to DB.
     date_created=models.DateTimeField(auto_now_add=True)
 
 
