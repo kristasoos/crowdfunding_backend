@@ -18,12 +18,15 @@
 
 - Homepage
   - Featuredkickstarters
+- Search page
+  - Search Specific fundraiser
 - Create new fundraiser page
-
   - Form with all fundraiser details
   - Ability to Submit
   - Nice error pages for validation issues
-
+- Display Fundraiser
+  - Shows all information abotu fundraiser
+  - Show all pledges made so far
 - {{ A page on the front end }}
   - {{ A list of dot-points showing functionality is available on this page }}
   - {{ etc }}
@@ -31,6 +34,7 @@
 - {{ A second page available on the front end }}
   - {{ Another list of dot-points showing functionality }}
   - {{ etc }}
+-
 
 ### API Spec
 
