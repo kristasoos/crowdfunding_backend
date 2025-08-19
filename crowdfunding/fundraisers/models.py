@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 
@@ -17,6 +18,12 @@ class Fundraiser(models.Model):
     # Date field should be automatically set with the current date when record is created. 
     # Automatically add the current time and date to DB.
     date_created=models.DateTimeField(auto_now_add=True)
+    owner=models.foreignkey(
+        get_user_model(),
+        related_name="owned_fundraisers",
+        on_delete=models.CASCADE
+    )
+
 
 class Pledge(models.Model):
     # Info to this class comes from the database table drawing. If we add more firlds to the table, we also need t add them here. 
@@ -31,6 +38,13 @@ class Pledge(models.Model):
         # on delete means that if the fundraiser is deleted, all pledges related to it will also be deleted.
         on_delete=models.CASCADE
     )
+    supporter=models.ForeignKey(
+        get_user_model(),
+        related_name="pledges",
+        on_delete=models.CASCADE
+    )
+
+
 
    
 
