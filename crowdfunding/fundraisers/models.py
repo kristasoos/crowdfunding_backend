@@ -18,7 +18,7 @@ class Fundraiser(models.Model):
     # Date field should be automatically set with the current date when record is created. 
     # Automatically add the current time and date to DB.
     date_created=models.DateTimeField(auto_now_add=True)
-    owner=models.foreignkey(
+    owner=models.ForeignKey(
         get_user_model(),
         related_name="owned_fundraisers",
         on_delete=models.CASCADE
