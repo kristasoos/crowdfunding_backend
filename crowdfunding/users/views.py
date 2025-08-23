@@ -46,10 +46,10 @@ class CustomAuthToken(ObtainAuthToken):
             data=request.data,
             context={'request': request}
         )
-        serializer.is_valid(raise_excetion=True)
+        serializer.is_valid(raise_exception=True)
         user=serializer.validated_data['user']
         token, created=Token.objects.get_or_create(user=user)
-        return Respone({
+        return Response({
             'token': token.key,
             'user_id': user.pk,
             'email': user.email,
