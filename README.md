@@ -56,6 +56,8 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 | 1/pledges     | GET         | Fetch all the Pledges | N/A          | 200                   | None                         |
 | /fundraisers/ |
 | 1/pledges     | POST        | New PLedge for Fundr. | JSON Payload | 201                   | Logged in user               |
+| users         | GET         | Fetch all the Users   | N/A          | 200                   | None                         |
+| users         | POST        | New User              | JSON Payload | 201                   | Logged in user               |
 
 ### DB Schema
 
