@@ -2,17 +2,27 @@
 
 # Crowdfunding Back End
 
-{{ your name here }}
+Krista Soosaar
 
 ## Planning:
 
+[] Create the base project
+[] Create requirements.txt
+[] Create models, sandbox and views
+[] Create endpoints for Fundraisers
+[] Create endpoints for Pledges
+[] Think through the Users behavior
+[] Create endpoints for users
+[] Create DB drawing
+[] Deploy to Heroku
+
 ### Concept/Name
 
-{{ Include a short description of your website concept here. }}
+Fundraiser for women to help study.
 
 ### Intended Audience/User Stories
 
-{{ Who are your intended audience? How will they use the website? }}
+My intended audience are wonmen who cannot afford to study.
 
 ### Front End Pages/Functionality
 
@@ -25,16 +35,10 @@
   - Ability to Submit
   - Nice error pages for validation issues
 - Display Fundraiser
-  - Shows all information abotu fundraiser
+  - Shows all information about fundraiser
   - Show all pledges made so far
-- {{ A page on the front end }}
-  - {{ A list of dot-points showing functionality is available on this page }}
-  - {{ etc }}
-  - {{ etc }}
-- {{ A second page available on the front end }}
-  - {{ Another list of dot-points showing functionality }}
-  - {{ etc }}
--
+- A page for Users, where the can see their project details
+  - Shows all information about fundraiser and pledges
 
 ### API Spec
 

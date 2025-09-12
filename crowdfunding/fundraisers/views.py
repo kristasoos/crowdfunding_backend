@@ -71,7 +71,7 @@ class PledgeList(APIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
     def get(self, request):
         pledges=Pledge.objects.all()
-        self.check_object_permissions(self.request, pledges)
+        # self.check_object_permissions(self.request, pledges)
         serializer=PledgeSerializer(pledges, many=True)
         return Response(serializer.data)
         
