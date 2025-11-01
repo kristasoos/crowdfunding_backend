@@ -20,8 +20,8 @@ class Fundraiser(models.Model):
     date_created=models.DateTimeField(auto_now_add=True)
     owner=models.ForeignKey(
         get_user_model(),
-        related_name="owned_fundraisers",
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="owned_fundraisers"
     )
 
 
@@ -40,8 +40,9 @@ class Pledge(models.Model):
     )
     supporter=models.ForeignKey(
         get_user_model(),
-        related_name="pledges",
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="pledges"
+        
     )
 
 
