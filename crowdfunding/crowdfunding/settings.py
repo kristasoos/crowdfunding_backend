@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = 'django-insecure-r_t5gw1i%g1w!^pp=e#s0s=7ptjx*mdo%qqhdz)sqffce!x91*'
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
-    '<your-secret-key>'
+    "dnn@iy=091i3&@93kiv3u#^nr81q#e2s97d1eghz-8-03a$u8w"
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -46,6 +46,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 INSTALLED_APPS = [
     'fundraisers.apps.FundraisersConfig',
+    'django_filters',
     'users.apps.UsersConfig',
     'rest_framework',
     'rest_framework.authtoken',
@@ -154,3 +155,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

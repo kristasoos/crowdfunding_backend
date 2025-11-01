@@ -29,7 +29,7 @@ class Pledge(models.Model):
     # Info to this class comes from the database table drawing. If we add more firlds to the table, we also need t add them here. 
     amount=models.IntegerField()
     comment=models.CharField(max_length=200)
-    anonomous=models.BooleanField()
+    anonymous=models.BooleanField()
     fundraiser=models.ForeignKey(
         # in our case it needs to match the class name above
         "Fundraiser",
