@@ -16,7 +16,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
             'password': {'write_only': True}
         }
 
-        def create(self, validated_data):
+    def create(self, validated_data):
             password = validated_data.pop("password", None)
             user = CustomUser(**validated_data)
             if password:
