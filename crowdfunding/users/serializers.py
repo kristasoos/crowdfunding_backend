@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import CustomUser
 from django.contrib.auth import get_user_model
 
-CustomUserUser = get_user_model()
+CustomUser = get_user_model()
 
 class CustomUserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -17,8 +17,14 @@ class CustomUserSerializer(serializers.ModelSerializer):
         }
 
         def create(self, validated_data):
-            password = validated_data.pop("password")
-            return CustomUser.objects.create_user(**validated_data, password=password)
+            password = validated_data.pop("password", None)
+            user = CustomUser(**validated_data)
+            if password:
+                user.set_password(password)
+            else:
+                user.set_unusable_password()
+            user.save()
+            return user
 
         # def create(self, validated_data):
         #     user = CustomUser(
