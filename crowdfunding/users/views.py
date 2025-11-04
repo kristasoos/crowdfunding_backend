@@ -2,10 +2,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
-from .models import CustomUser
-from .serializers import CustomUserSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
+from .models import CustomUser
+from .serializers import CustomUserSerializer
+
 
 class CustomUserList(APIView):
     def get(self,request):
@@ -52,7 +53,7 @@ class CustomAuthToken(ObtainAuthToken):
             context = {'request': request}
         )
         serializer.is_valid(raise_exception=True)
-        user =serializer._validated_data['user']
+        user =serializer.validated_data['user']
 
         token, created =Token.objects.get_or_create(user=user)
 
